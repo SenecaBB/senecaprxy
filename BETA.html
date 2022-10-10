@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link
+    rel="icon"
+    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT8AAAEDCAIAAADMfJQqAAAAAXNSR0IArs4c6QAAEhtJREFUeAHt3X1sE/UfwPHeXZ82YCtjU4SgAWYAeVCQRBqMRpAgRv5QUGM0anxgJi5GnlTMIlGiESXqHwZFfAJijCBB0YBEISADI88SHhcc8rwJGx1sdO3R3i8/mtRmW29317vrtX33r+v3vg+f7+vb7/UeW5eLFwIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAQGEICIXRTXqZAwK///77iBEjtAcqCEL//v2vXLmivUie5XTnWX/oTu4K+P3+3r1764p/2LBhu3fv1lUknzKL+dQZ+oJAQQkwewtquOlsXgkwe/NqOOlMQQkwewtquOlsXgkwe/NqOOlMQQkwewtquOlsXgkwe/NqOOlMQQkwewtquOlsXgkwe/NqOOlMQQlwr1VBDbejOxsKhRobG7WHqChKId8mqR2KnAgggAACCCDgWAFB4Lklxw4OgeWVgJkzraysrKKiYteuXfYICYJQVVU1cuTIt956i+Mfe8xpxVECJsxej8czY8aMBQsWFBcX+3w++7vX3t7+/PPP//TTTy0tLeqtT506dcWKFep5sr5WUZTS0tJAIHDrrbdu27YtHo8bC8nn8/Xr16+qqmr37t0rV640VokV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lDJXoMPfO5pbeW7VNnDgQGMB6569S5cufeKJJ4w1ZmepWCw2Y8aMzld9Vq9e7ahnFew0cU5b0Wj00qVLzokni5Fs3ry5vr7eWAC6Z280Gv3uu++c/0NKI0eO/PvvvzujhMPhPXv25MruQ+f48yBFUZSzZ8/mQUcy70IsFsvkj9R1z16XyxWLxZy/23P06NF0uMFgsKKiIt1a0i0VUBSlvb190KBBlraSE5XHYrFAIGD4i9fIWauEiyzLfr//yJEjDmRqbm4uKipSPwvf1NT0ww8/ODD4/A5JUZTq6urEfw7nd0+77V00Gv3+++9t/fftDjGJoujxeLZt26blr1xsyLNs2TLtv68pCILH4zl16lQ4HLYhNtObSB2LsrKyS5cumd6EuRU2Njaq3/qe4f8YJUHMDdv02mRZfuihhzqfT03Gr33ByJ5zsvZ4PC7L8uTJk9W/6JL5rVtQFCUcDj/33HPaz0gpiiLL8sSJE++//34Og60bmsRzl08++eSECRM6X8CztF1nVi7L8tq1a035yJlwp2Rra2tRUVGvXr0OHTpUVlamKIr6JtZE00gkIklSW1tbQ0ODsf/yqrv2KioqamhoSPxVlEXPP5jY61ypKhKJXLx48e67754wYcKKFStyJWyL4pRl+dy5cyNGjLh8+bJZTZgwe10uVzQabW5u7tu3ryAIlZWVmRyIa++YKIrJHyvKcEsWiUTKyspcLtfTTz+di5+zUCgUCAQsegxN+4ik5vR6ve3t7Ylx0fj7rAYGMRQKpTaaWP7mm286J2YxZePGjZs2bTp16pTpu6hCFntF0wikCvh8Pr2/l2L/X2mnBswyAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAgggYIvA/wBiXdQmrxet3gAAAABJRU5ErkJggg=="
+  />
+  <style>
+    body {
+      background-color: #595959;
+    }
+
+    button {
+      min-height: 45px;
+      min-width: 45px;
+      margin: 10px;
+
+      padding: 5px;
+      border-radius: 100px;
+    }
+  </style>
+  <div id="top">
+    <h1>
+     <img src="logo.png">
+  
+     <a href="https://eeki2.csb.app/">install OASIS client</a>
+<br>
+     by Jackboback
+      <h3 id="coin" style="color: white;">
+        coin:
+              </h3>
+<script>
+alert(`if you want to add an app or game now
+go to the proxy of your choice (proxys are the unblockers)
+and enter in a URL if a game works copy the url code.
+
+EX: /web/_aHR0cHM6Ly9zbG9wZWdhbWUub25saW5l_/
+
+and then post it in the comments if a comment gets 5 likes i will add it.`)
+
+
+  var coin = 0
+  UpdateCoin1()
+  function UpdateCoin1() {
+document.getElementById('coin').innerText = 'coin:' + ' ' + coin
+  
+  }
+
+
+  </script>
+      <p id="use">
+
+</p>
+
+<p id="pass">
+
+</p>
+    <div id="Account">
+      <!--- <select name="style" id="CSS">
+        <option value="">default</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    -->
+
+    <button onclick="Show()">
+Color
+    </button>
+
+    <script>
+function Show() {
+  document.getElementById('Window').style.display = 'block'
+  document.getElementById('winCon').innerHTML = ` <input type="color" id="Setcolor" name="favcolor" value="#595959">
+      <button onclick="Color(document.getElementById('Setcolor').value,'body')">
+    change background color
+      </button>
+ 
+      <button onclick="Color(document.getElementById('Setcolor').value,'top')">
+    change top color
+      </button>
+      `
+}
+      </script>
+   
+   
+     <style>
+#Account {
+  position: absolute;
+  left: 80%;
+  top: 3%
+}
+       </style>
+
+    </h1>
+
+    </div>
+  </div>
+  <title>OASIS EMULATOR</title>
+  <h2>
+    Can't reach a page? try using a diffrent version
+  </h2>
+</head>
+
+
+
+<style>
+    body {
+      font-family: 'Lato', sans-serif;
+    }
+    
+    .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0, 0.9);
+      overflow-x: hidden;
+      transition: 0.5s;
+    }
+    
+    .overlay-content {
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+    }
+    
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+    
+    .overlay a:hover, .overlay a:focus {
+      color: #f1f1f1;
+    }
+    
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .overlay a {font-size: 20px}
+      .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+      }
+    }
+    </style>
+    
+    
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+   <iframe id="frame" src="" width="100%" height="600px"></iframe>
+  </div>
+    </div>
+    
+    <script>
+
+
+      </script>
+    
+
+    
+    <script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+
+    function changeFrame(src) {
+    openNav()
+      document.getElementById("frame").src = src
+    }
+
+    </script>
+    
+    
+
+
+
+<style type="text/css">
+  .context-menu {
+      position: absolute;
+      text-align: center;
+      background: white;
+      border: 1px solid black;
+  }
+
+  .context-menu ul {
+      padding: 0px;
+      margin: 0px;
+      min-width: 150px;
+      list-style: none;
+  }
+
+  .context-menu ul li {
+      padding-bottom: 7px;
+      padding-top: 7px;
+      border: 1px solid black;
+  }
+
+  .context-menu ul li a {
+      text-decoration: none;
+      color: black;
+  }
+
+  .context-menu ul li:hover {
+      background: lightskyblue;
+  }
+</style>
+
+
+
+<div id="contextMenu" class="context-menu" 
+  style="display:none">
+  <ul>
+      <li><a href="javascript:Show()">BG color</a></li>
+    <li><a href="#">change version</a></li>
+    <li><a href="javascript:document.getElementById('Window').style.display = 'block'; document.getElementById('winCon').innerHTML = Apps">All apps</a></li>
+    <li><a href="javascript: var ans=prompt('app'); Open(ans)">open app</a></li>
+      <li><a href="OASIS-DEVS.html">OASIS DEVS</a></li>
+      <li><a href="#">sugest an app</a></li>
+      <li><a href="#">add HTML to page</a></li>
+      <li><a href="#">add JS to page</a></li>
+      <li><a href="#">moding</a></li>
+  </ul>
+</div>
+
+<script>
+  document.onclick = hideMenu;
+  document.oncontextmenu = rightClick;
+
+  function hideMenu() {
+      document.getElementById(
+          "contextMenu").style.display = "none"
+  }
+
+  function rightClick(e) {
+      e.preventDefault();
+
+      if (document.getElementById(
+          "contextMenu").style.display == "block")
+          hideMenu();
+      else {
+          var menu = document
+              .getElementById("contextMenu")
+                
+          menu.style.display = 'block';
+          menu.style.left = e.pageX + "px";
+          menu.style.top = e.pageY + "px";
+      }
+  }
+</script>
+
+<style>
+  #Window {
+    position: absolute;
+    z-index: 9;
+    background-color: #f1f1f1;
+
+    border: 1px solid #d3d3d3;
+    height: 500px;
+    margin: auto;
+    position: absolute;
+    top: 25%;
+    resize: both;
+    overflow: auto;
+  }
+
+  #winCon {
+    overflow: auto;
+  }
+
+  #Windowheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196f3;
+    color: #fff;
+    width: 500px;
+    height: 20px;
+  }
+
+  #closeWin {
+    position: absolute;
+    right: -0px;
+    top: 0px;
+    width: 30px;
+    height: 40px;
+  }
+</style>
+
+<div id="Window">
+  <div id="Windowheader">
+    <p></p>
+    <button
+      id="closeWin"
+      onclick=' document.getElementById("Window").style.display = "none";'
+    >
+      X
+    </button>
+  </div>
+  <div id="winCon"></div>
+</div>
+
+<script>
+  //Make the DIV element draggagle:
+  dragElement(document.getElementById("Window"));
+
+  function dragElement(elmnt) {
+    var pos1 = 0,
+      pos2 = 0,
+      pos3 = 0,
+      pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
+      /* if present, the header is where you move the DIV from:*/
+      document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    } else {
+      /* otherwise, move the DIV from anywhere inside the DIV:*/
+      elmnt.onmousedown = dragMouseDown;
+    }
+
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // get the mouse cursor position at startup:
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      // call a function whenever the cursor moves:
+      document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // calculate the new cursor position:
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      // set the element's new position:
+      elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+      elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+    }
+
+    function closeDragElement() {
+      /* stop moving when mouse button is released:*/
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
+  }
+
+  document.getElementById("Window").style.display = "none";
+</script>
+
+<html lang="en">
+  <body>
+    <style>
+      .dropbtn {
+        background-color: #3498db;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .dropbtn:hover,
+      .dropbtn:focus {
+        background-color: #2980b9;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: auto;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown a:hover {
+        background-color: #ddd;
+      }
+
+      .show {
+        display: block;
+      }
+    </style>
+
+    <div id="Ver">
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">
+          <p id="VERS">
+            Version
+          </p>
+        </button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="javascript:New('1')">v1.1</a>
+          <a href="javascript:New('2')">v1.2</a>
+          <a href="javascript:New('3')">v1.3</a>
+          <a href="javascript:New('4')">v1.4</a>
+          <a href="javascript:New('5')">v1.5</a>
+          <a href="javascript:New('6')">v1.6</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function (event) {
+        if (!event.target.matches(".dropbtn")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+    </script>
+    <h3></h3>
+    <!-- Start BawkBox Code-->
+    <script data-sil-id="613e449e41320b001e7accf4">
+      var loadWidget = function () {
+        var d = document,
+          w = window,
+          l = window.location,
+          p = l.protocol == "file:" ? "http://" : "//";
+        if (!w.WS) w.WS = {};
+        c = w.WS;
+        var m = function (t, o) {
+          var e = d.getElementsByTagName("script");
+          e = e[e.length - 1];
+          var n = d.createElement(t);
+          if (t == "script") {
+            n.async = true;
+          }
+          for (k in o) n[k] = o[k];
+          e.parentNode.insertBefore(n, e);
+        };
+        m("script", {
+          src:
+            p +
+            "bawkbox.com/widget/feedback/613e449e41320b001e7accf4?page=" +
+            encodeURIComponent(l + ""),
+          type: "text/javascript"
+        });
+        c.load_net = m;
+      };
+      if (window.Squarespace) {
+        document.addEventListener("DOMContentLoaded", loadWidget);
+        setTimeOut(function () {
+          document.addEventListener("DOMContentLoaded", loadWidget);
+        }, 3000);
+      } else {
+        loadWidget();
+      }
+    </script>
+    <div
+      class="sil-widget-feedback sil-widget"
+      id="sil-widget-613e449e41320b001e7accf4"
+    >
+      <a href="//bawkbox.com/install/feedback"></a>
+    </div>
+    <!-- End BawkBox Code-->
+  </body>
+
+  <div id="123">
+  
+
+  </div>
+
+  <div id="cont">
+    <h3>
+      Apps <button id="Add-app" onclick="Add('App')">Add an app</button>
+    </h3>
+    <div id="Apps">
+    
+
+      <a href="javascript:changeFrame('https://gba-jack.glitch.me/')">NE</a>
+      <button    onclick="Open('emu')">
+       nintendo emulator
+      </button>
+
+
+
+
+
+<a href="javascript:changeFrame('http://broken-ruddy-atlasaurus.glitch.me/')">holy</a>
+        <button>
+            <img width="25px"
+              src="block.png"
+              onclick="Open('holy')"
+            />
+          </button>
+          <a href='javascript:changeFrame("https://webublock" +VER +".glitch.me/web/_aHR0cHM6Ly9kaXNjb3JkLmNvbQ==_/")'>discord</a>
+
+      <button>
+      <img
+        src="https://cdn.glitch.com/a549790d-7749-4ee1-816d-5c775f4e99f0%2Fbxl-discord-alt.png?v=1631022280996"
+        onclick="Open('discord')"
+      />
+    </button>
+    <a href='javascript:changeFrame("https://webublock" +VER +".glitch.me/web/_aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ==_/?safe=active&ssui=on")'>google</a>
+
+    <button>
+      <img
+        src="https://cdn.glitch.com/9ae5a0f4-b9e6-47c9-a11a-793d92ce044f%2Ffavicon%20(2).svg?v=1631459746599"
+        width="25"
+        onclick="Open('Google-un')"
+      />
+    </button>
+    <a href="javascript:changeFrame('')">reddit</a>
+
+    <button>
+      <img
+        src="https://cdn.glitch.com/a549790d-7749-4ee1-816d-5c775f4e99f0%2Fbxl-reddit.png?v=1631038871784"
+        onclick="Open('Reddit')"
+      />
+    </button>
+    <a href="javascript:changeFrame('')">github</a>
+
+    <button>
+      <img
+        src="https://cdn.glitch.com/a549790d-7749-4ee1-816d-5c775f4e99f0%2Fbxl-github.png?v=1631038871784"
+        onclick="Open('Github')"
+      />
+    </button>
+    <a href="javascript:changeFrame('')">ELA</a>
+
+    <button>
+      <img
+        src="https://cdn.glitch.com/a549790d-7749-4ee1-816d-5c775f4e99f0%2Ffavicon%20(1).svg?v=1631279279402"
+        onclick="Open('ELA')"
+        width="25px"
+      />
+    </button>
+    <a href="javascript:changeFrame('')">twitch</a>
+
+    <button>
+      <img
+        src="https://cdn.glitch.com/a549790d-7749-4ee1-816d-5c775f4e99f0%2Ffavicons%20(9).png?v=1631556841925"
+        onclick="Open('TWITCH')"
+        width="25px"
+      />
+    </button>
+    <a href="javascript:changeFrame('')">swf</a>
+
+    <button>
+      <img
+        src="https://cdn.glitch.com/a549790d-7749-4ee1-816d-5c775f4e99f0%2Ffavicons%20(10).png?v=1631558291896"
+        onclick="Open('SWF')"
+        width="25px"
+      />
+    </button>
+    </div>
+    <div id="games">
+    <h3>
+      Games <button onclick="Add('game')" id="Add-game">Add an game</button>
+    </h3>
+
+    <br />
+
+    <button>
+      <img
+        src="https://pbs.twimg.com/profile_images/950503994975293441/PEFcqeqk.jpg"
+        onclick="Open('Defly')"
+        width="24px"
+      />
+    </button>
+
+    <!-- <button >
+      
+    
+    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/977e8c4f-1c99-46cd-b070-10cd97086c08/d36qrs5-017c3744-8c94-4d47-9633-d85b991bf2f7.png" onclick="Open('Minecraft')" width="24px">
+    
+      
+  </button>
+--->
+
+    <button>
+      <img
+        src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/977e8c4f-1c99-46cd-b070-10cd97086c08/d36qrs5-017c3744-8c94-4d47-9633-d85b991bf2f7.png"
+        onclick="Open('MCJS')"
+        width="24px"
+      />
+    </button>
+
+    <button>
+      <img
+        src="https://cdn.game.tv/game-tv-content/images_3/9ebf2889a56000b6aca76bc0f2f26517/Logo.png"
+        onclick="Open('Zombs')"
+        width="50px"
+        height="25px"
+      />
+    </button>
+
+    <!--- <button >
+      
+    
+    <img src="" onclick="Open('HAPPY')" width="50px" height="25px">
+
+    
+      
+  </button>
+--->
+
+    <button>
+      <img
+        src="https://cdn.glitch.com/a549790d-7749-4ee1-816d-5c775f4e99f0%2Funnamed%20(1).png?v=1631311914484"
+        onclick="Open('ASTRO')"
+        width="25px"
+        height="25px"
+      />
+    </button>
+
+    <button>
+      <img
+        src="https://cdn.glitch.com/a549790d-7749-4ee1-816d-5c775f4e99f0%2F1v1.lol.png?v=1631379983445"
+        onclick="Open('1v1')"
+        width="25px"
+        height="25px"
+      />
+    </button>
+
+    <button>
+      <img
+        src="https://cdn.glitch.com/a549790d-7749-4ee1-816d-5c775f4e99f0%2Ffavicons%20(2).png?v=1631380367327"
+        onclick="Open('snake')"
+        width="25px"
+        height="25px"
+      />
+    </button>
+
+    <button>
+      <img
+        src="https://cdn.glitch.com/a549790d-7749-4ee1-816d-5c775f4e99f0%2Fimages%20(36).jpeg?v=1631406032597"
+        onclick="Open('EGG')"
+        width="45px"
+        height="25px"
+      />
+    </button>
+
+    <button>
+      <img
+        src="https://cdn.glitch.com/a549790d-7749-4ee1-816d-5c775f4e99f0%2Ffavicons%20(4).png?v=1631456476029"
+        onclick="Open('FORTNITE');"
+        width="25px"
+        height="25px"
+      />
+    </button>
+
+    <br />
+    <button>
+      <img
+        src="https://cdn.glitch.com/a549790d-7749-4ee1-816d-5c775f4e99f0%2Ffavicons%20(5).png?v=1631470397240"
+        onclick="Open('PAPER1')"
+        width="25px"
+        height="25px"
+      />
+    </button>
+
+    <button>
+      <img
+        src="https://cdn.glitch.com/a549790d-7749-4ee1-816d-5c775f4e99f0%2Ffavicons%20(6).png?v=1631471289312"
+        onclick="Open('TANK')"
+        width="25px"
+        height="25px"
+      />
+    </button>
+
+    <button>
+      <img
+        src="https://cdn.glitch.com/a549790d-7749-4ee1-816d-5c775f4e99f0%2Ffavicons%20(7).png?v=1631542223100"
+        onclick="Open('SPLOOP')"
+        width="25px"
+        height="25"
+      />
+    </button>
+
+    <button>
+      <img
+        src="https://cdn.glitch.com/a549790d-7749-4ee1-816d-5c775f4e99f0%2Ffavicons%20(8).png?v=1631542528694"
+        onclick="Open('COOKIE')"
+        width="25px"
+        height="25px"
+      />
+    </button>
+
+
+    <button>
+      <img
+        src="tetris.png"
+        onclick="Window('TETRIS')"
+        width="25px"
+        height="25px"
+      />
+    </button>
+
+    </button>
+
+
+
+      <button>
+          <img
+            src="HAPPY.png"
+            onclick="Open('HAPPY')"
+            width="45xpx"
+            height="25px"
+          />
+        </button>
+
+
+        <button>
+            <img
+              src="stunt.png"
+              onclick="Open('STUNT')"
+              width="25xpx"
+              height="25px"
+            />
+          </button>
+
+
+          <button>
+            <img
+              src=""
+              onclick="Open('RUN')"
+              width="25xpx"
+              height="25px"
+            />
+          </button>
+
+          <button   onclick="Open('SLOPE')">
+            SLOPE
+            </button>
+    </div>
+
+
+<h1>
+unblockers
+</h1>
+<div id="proxys">
+<button onclick="Open('webublock')">
+webublock
+</button>
+<button onclick="Open('OB')">
+  oasis browser
+    </button>
+</div>
+
+<h1>
+  downloads
+</h1>
+<div id="downloads">
+
+<button onclick=''>
+test
+</button>
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+    </script>
+<script>
+    $(document).ready(function () {
+        $("#link").click(function (e) {
+            e.preventDefault();
+              
+            window.location.href  = "block.png";
+        });
+    });
+    </script>
+</div>
+
+
+
+    <h1>
+      Download now!
+    </h1>
+    <h3>
+      <a href="Download.html">how to install</a>
+    </h3>
+
+    <h3>
+      Want an app or game? submit a form here:
+    </h3>
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLSc7XxUN2fi4r3VQP3F9TpkXnmFDSjOfXOWE3-OGLFJr_6n5_g/viewform?usp=sf_link"
+      >click here</a
+    >
+    <h3>
+      Add me on discord!
+    </h3>
+    <p style="color: blue;">
+      jackboback#6811
+    </p>
+
+    <h3>
+      The unblockers used:
+      <br />
+      <a href="https://webublock1.glitch.me/">Webublock1</a>
+      <br />
+      <a href="https://webublock2.glitch.me/">Webublock2</a>
+      <br />
+      <a href="https://webublock3.glitch.me/">Webublock3</a>
+    </h3>
+  </div>
+
+  <h3>
+    COMMENTS
+  </h3>
+  <br />
+  <!-- begin wwww.htmlcommentbox.com -->
+  <div id="HCB_comment_box">
+    <a href="http://www.htmlcommentbox.com">Comment Form</a> is loading
+    comments...
+  </div>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0"
+  />
+  <script type="text/javascript" id="hcb">
+    /*<!--*/ if (!window.hcb_user) {
+      hcb_user = {};
+    }
+    (function () {
+      var s = document.createElement("script"),
+        l = hcb_user.PAGE || ("" + window.location).replace(/'/g, "%27"),
+        h = "https://www.htmlcommentbox.com";
+      s.setAttribute("type", "text/javascript");
+      s.setAttribute(
+        "src",
+        h +
+          "/jread?page=" +
+          encodeURIComponent(l).replace("+", "%2B") +
+          "&mod=%241%24wq1rdBcg%241xDnKLhKj17Zz.k0PK0WR1" +
+          "&opts=16798&num=10&ts=1631125487533"
+      );
+      if (typeof s != "undefined")
+        document.getElementsByTagName("head")[0].appendChild(s);
+    })(); /*-->*/
+  </script>
+  <!-- end www.htmlcommentbox.com -->
+
+  <h3>
+    NEWS
+  </h3>
+
+  <br />
+
+  <style>
+    #123 {
+      background-color: blue;
+    }
+
+    #top {
+      background-color: black;
+      color: white;
+
+      margin-top: 15px;
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-bottom: 15px;
+    }
+
+    #Ver {
+      right: 0;
+
+      margin-bottom: -15px;
+      border-radius: 10px;
+    }
+  </style>
+
+  <script>
+var username = null
+var password = null
+const chan1 = new BroadcastChannel('Account');
+const chan2 = new BroadcastChannel('user');
+  const chan3 = new BroadcastChannel('pass');
+  chan2.onmessage = function (ev) {
+    username= ev
+alert(username)
+   }
+
+   chan3.onmessage = function (ev) {
+  password=ev
+alert(password)
+   }
+
+ 
+window.onload = function() {
+  chan1.postMessage('run=true');
+};
+
+    var myWindow = [];
+
+    function run(link, ID, HTML) {
+      myWindow.push(window.open("", "MsgWindow", "width=1000,height=500"));
+
+      if (HTML !== 0) {
+        myWindow[ID].document.write(HTML);
+      } else {
+        myWindow[ID].document.write(
+          `
+    <h1>
+    Weblet Launcher
+    </h1>
+    <style>
+    body {
+        background-color: lightgrey;
+    }
+    </style>
+    <iframe src=` +
+            link +
+            ` style="height:100%;width:100%;" title="Iframe cont" id="IFRAME"></iframe>
+    `
+        );
+      }
+    }
+
+    /*Open('https://weblet-launcher.glitch.me/',0,0)
+     */
+
+    var VER = "1";
+    function New(ver) {
+      VER = ver;
+    }
+
+    function GO() {
+      var Link = document.getElementById("link").value;
+
+      var Des = document.getElementById("display").value;
+
+      document.getElementById("cont").innerHTML += `TEST`;
+    }
+
+    function Deploy() {
+      document.getElementById("Window").style.display = "block";
+      document.getElementById(
+        "winCon"
+      ).innerHTML = `<input type="text" id="link">Link
+          <br>
+          <input type="text" id="display">Name/display
+          <br>
+          <button id="game" onclick="GO()">
+          Launch
+    </button>
+
+
+          `;
+    }
+
+
+
+var Apps = ['discord','Google-un','Reddit','Github','Defly','MCJS','Zombs','ELA','ASTRO','1v1','snake','EGG','FORTNITE','PAPER1','TANK','SPLOOP','COOKIE','TWITCH','SWF','TETRIS','TETRIS-MIND','TETRIS-GEM','HAPPY']
+
+    function Open(app) {
+      if (app == "discord") {
+        window.open(
+          "https://webublock" +
+            VER +
+            ".glitch.me/web/_aHR0cHM6Ly9kaXNjb3JkLmNvbQ==_/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "Google-un") {
+        window.open(
+          "https://webublock" +
+            VER +
+            ".glitch.me/web/_aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ==_/?safe=active&ssui=on",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "Reddit") {
+        window.open(
+          "https://webublock" +
+            VER +
+            "glitch.me/web/_aHR0cHM6Ly93d3cucmVkZGl0LmNvbQ==_/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+      if (app == "KLEKI") {
+        window.open(
+          "https://kleki.com",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "Github") {
+        window.open(
+          "https://webublock" +
+            VER +
+            "glitch.me/web/_aHR0cHM6Ly9naXRodWIuY29t_/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "Defly") {
+        window.open(
+          "https://webublock" +
+            VER +
+            ".glitch.me/web/_aHR0cHM6Ly9kZWZseS5pbw==_/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "Minecraft") {
+        window.open(
+          "https://webublock" +
+            VER +
+            ".glitch.me/web/_aHR0cHM6Ly9jbGFzc2ljLm1pbmVjcmFmdC5uZXQ=_/?host=ysva75M9T9vpR4-8",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "Zombs") {
+        window.open(
+          "https://webublock" +
+            VER +
+            ".glitch.me/web/_aHR0cHM6Ly96b21ic3JveWFsZS5pbw==_/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "MCJS") {
+        window.open(
+          "mcjs.html",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "ELA") {
+        window.open(
+          "http://elastikgc.glitch.me/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "JERK") {
+        window.open(
+          "https://webublock2.glitch.me/web/_aHR0cHM6Ly90b3RhbGplcmtmYWNlLmNvbQ==_/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "ASTRO") {
+        window.open(
+          "https://webublock" +
+            VER +
+            ".glitch.me/web/_aHR0cHM6Ly9hc3Ryb3JhY2UuaW8=_/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "1v1") {
+        window.open(
+          "https://webublock" + VER + ".glitch.me/web/_aHR0cHM6Ly8xdjEubG9s_/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "snake") {
+        window.open(
+          "https://webublock" +
+            VER +
+            ".glitch.me/web/_aHR0cDovL3NsaXRoZXIuaW8=_/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "EGG") {
+        window.open(
+          "https://webublock" +
+            VER +
+            ".glitch.me/web/_aHR0cHM6Ly9zaGVsbHNob2NrLmlv_/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "FORTNITE") {
+        window.open(
+          "https://webublock" +
+            VER +
+            ".glitch.me/web/_aHR0cHM6Ly92b3hpb20uaW8=_/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "PAPER1") {
+        window.open(
+          "https://webublock" +
+            VER +
+            ".glitch.me/web/_aHR0cHM6Ly9wYXBlci1pby5jb20=_/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "TANK") {
+        window.open(
+          "https://webublock" +
+            VER +
+            ".glitch.me/web/_aHR0cDovL3RhbmtzbWl0aC5pbw==_/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "SPLOOP") {
+        window.open(
+          "https://webublock" +
+            VER +
+            ".glitch.me/web/_aHR0cHM6Ly9zcGxvb3AuaW8=_/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "COOKIE") {
+        window.open(
+          "https://webublock" +
+            VER +
+            ".glitch.me/web/_aHR0cHM6Ly9vcnRlaWwuZGFzaG5ldC5vcmc=_/cookieclicker/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "TWITCH") {
+        window.open(
+          "https://webublock" +
+            VER +
+            ".glitch.me/web/_aHR0cHM6Ly93d3cudHdpdGNoLnR2_/directory",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "SWF") {
+        window.open(
+          "https://ruffle.rs/demo/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+
+      if (app == "TETRIS") {
+        window.open(
+          "https://webublock"+VER+".glitch.me/web/_aHR0cHM6Ly90ZXRyaXMuY29t_/play-tetris",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "TETRIS-MIND") {
+        window.open(
+          "https://webublock"+VER+".glitch.me/web/_aHR0cHM6Ly90ZXRyaXMuY29t_/play-tetrismindbender",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "TETRIS-GEM") {
+        window.open(
+          "https://webublock"+VER+".glitch.me/web/_aHR0cHM6Ly90ZXRyaXMuY29t_/play-tetrisgems",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "HAPPY") {
+        window.open(
+          "https://webublock"+VER+".glitch.me/web/_aHR0cHM6Ly9odG1sNS5nYW1lZGlzdHJpYnV0aW9uLmNvbQ==_/55084fdaacba49cbaeeead2464733b72/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "STUNT") {
+        window.open(
+          "https://webublock"+VER+".glitch.me/web/_aHR0cHM6Ly9tYWRhbGluc3R1bnRjYXJzMi5pbw==_/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "holy") {
+        window.open(
+          "http://broken-ruddy-atlasaurus.glitch.me/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+
+      if (app == "emu") {
+        window.open(
+          "https://gba-jack.glitch.me/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+
+      if (app == "yan") {
+        window.open(
+          "https://yandex.com/games/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "RUN") {
+        window.open(
+          "https://player03.com/run/3/beta/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "webublock") {
+        window.open(
+          "https://webublock"+VER+".glitch.me/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "OB") {
+        window.open(
+          "https://oasis-browser-"+VER+".glitch.me/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+      if (app == "SLOPE") {
+        window.open(
+          "https://webublock"+VER+".glitch.me/web/_aHR0cHM6Ly9zbG9wZWdhbWUub25saW5l_/",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=500"
+        );
+      }
+
+    }
+
+    function Settings() {
+      alert("settings");
+    }
+  </script>
+</html>
+
+
+<script>
+document.addEventListener("keyup", function(event) {
+    if (event.key === '!') {
+    var color=prompt('color')
+    document.body.style.backgroundColor = color;
+    }
+});
+
+function Color(color,item) {
+ if (item == 'body') {
+    document.body.style.backgroundColor = color;
+  
+   localStorage.setItem('BGCOLOR', color)
+ }else {
+   document.getElementById(item).style.backgroundColor = color;
+ 
+  }
+
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function Window(item) {
+if (item == 'TETRIS') {
+document.getElementById('Window').style.display = 'block'
+document.getElementById('winCon').innerHTML = `
+classic:
+<button>
+        <img
+          src="tetris.png"
+          onclick="Open('TETRIS')"
+          width="25px"
+          height="25px"
+        />
+      </button>
+
+tetrs mindbender:
+    <button>
+      <img
+        src="tetris.png"
+        onclick="Open('TETRIS-MIND')"
+        width="25px"
+        height="25px"
+      />
+    </button>
+
+tetris gem:
+    <button>
+      <img
+        src="tetris.png"
+        onclick="Open('TETRIS-GEM')"
+        width="25px"
+        height="25px"
+    />
+      `
+}
+}
+
+
+
+
+
+
+
+
+
+
+function CSS() {
+  document.getElementById('Window').style.display = 'block'
+  document.getElementById('winCon').innerHTML = `
+  <input type="color" id="color-mod-BG" name="favcolor" value="#595959">
+  <button>
+    background color
+    </button>
+  
+    <button>
+    background img
+    </button>
+<br>
+    <input type="color" id="color-mod-TIT" name="favcolor" value="#595959">
+  <button>
+   title color
+    </button>
+
+    <button>
+   title text color
+    </button>
+<br>
+<input type="color" id="color-mod-button" name="favcolor" value="#595959">
+  <button>
+   button color
+    </button>
+
+  `
+}
+
+function Add(type) {
+if (type == 'app') {
+document.getElementById('Add-app').innerHTML = 'test'
+}
+
+if (type == 'game') {
+
+}
+}
+
+</script>
+
+
+
+
+
+<div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/5y4vma4dlrziniiv" frameborder="0" allow="camera;microphone;geolocation" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p><div style="padding:8px;text-align:right;margin:0;"><a href="https://padlet.com?ref=embed" style="padding:0;margin:0;border:none;display:block;line-height:1;height:16px" target="_blank"><img src="https://padlet.net/embeds/made_with_padlet.png" width="86" height="16" style="padding:0;margin:0;background:none;border:none;display:inline;box-shadow:none" alt="Made with Padlet"></a></div></div>  
